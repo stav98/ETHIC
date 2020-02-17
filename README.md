@@ -12,7 +12,7 @@
 19/01/20 - 29/01/20 : Σχεδιασμός 3D εξαρτημάτων<br/>
 01/02/20 - σήμερα   : Κατασκευή θερμοκηπίου - Παραγγελία υλικών<br/>
 <br>
-<div style="align:center;">
+<div align="center">
 <img src="resources/images/frame1.jpg" width="600"><br/>
 <img src="resources/images/ergasia1.jpg" width="600"><br/>
 </div>
