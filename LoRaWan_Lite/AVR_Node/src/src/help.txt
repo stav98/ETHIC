@@ -1,0 +1,13 @@
+Με SinaProg2 διαβάζω κενό ATMEGA 328P με Signature 1E950F.
+Lock Bits: x3F, High Fuse: xD9, Low Fuse: x62, Ext.Fuse: x07.
+
+Αρχικά γράφω τον Bootloader από 
+/home/stav/.local/share/arduino-1.8.9/hardware/arduino/avr/bootloaders/atmega και αρχείο
+optiboot_atmega328.hex
+
+Μετά γράφω Fuses για Arduino
+Lock Bits: x0F, High Fuse: xDE, Low Fuse: xFF, Ext.Fuse: x05.
+
+Για BOD 4.5V βάζω το Ext.Fuse: x04
+
+Τα Lock Bits πρέπει να γίνουν 0E ????
