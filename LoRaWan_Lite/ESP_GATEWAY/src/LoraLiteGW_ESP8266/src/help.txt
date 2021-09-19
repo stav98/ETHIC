@@ -1,0 +1,8 @@
+Generic ESP8266 module
+Upload Speed 460800
+CPU Frequency: 160MHz
+Crystal Frequency: 26MHz
+Flash Size: 4M(3 SPIFFS)
+Flash Mode: QIO
+Flash Frequency: 40MHz
+Reset Method: Node MCU ή DTR
