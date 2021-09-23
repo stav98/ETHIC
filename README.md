@@ -26,10 +26,8 @@
     -//-     : Δοκιμές του πρωτοκόλλου LoRa WAN Lite. <br>
 <br>
 <div align="center">
- <img src="resources/images/frame_arxiko.jpg" width="600"><br/>
 <img src="resources/images/frame1.jpg" width="600"><br/>
 <img src="resources/images/ergasia1.jpg" width="600"><br/>
-<img src="resources/images/3d_parts2.jpg" width="600"><br/>
 <img src="resources/images/ydreysi1.jpg" width="600"><br/>
 <img src="resources/images/ydreysi3.jpg" width="600"><br/>
 </div>
