@@ -17,4 +17,9 @@
   <p align="center"><img src="../resources/images/frame1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/frame2.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/frame3.jpg" width="600"></p>
+  
+<p>Ακολουθεί video:</p>
+  <p align="center">
+<a href="https://www.youtube.com/watch?v=6CrTwO1s_tY" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/6CrTwO1s_tY/0.jpg"></a>
+</p>
   <a href="../README.md"><= Επιστροφή</a><br>
