@@ -51,8 +51,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Τοποθέτηση συστημάτων ποτίσματος - δοκιμές.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Τοποθέτηση νάυλον.<br>
 Ιούνιος '21  : Διόρθωση αρχικών σχεδίων.<br>
-    -//-     : <a href="en15.md">Κατασκευή πρωτότυπου ηλεκτρονικού κυκλώματος σε perfboard.</a><br>
-    -//-     : Δοκιμές του πρωτοκόλλου LoRa WAN Lite. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a href="en15.md">Κατασκευή πρωτότυπου ηλεκτρονικού κυκλώματος σε perfboard.</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Δοκιμές του πρωτοκόλλου LoRa WAN Lite. <br>
 Σεπτέμβριος '21  : Συγγραφή τεκμηρίωσης - σύνδεση υποσυστημάτων - δοκιμές.<br>
 <br>
 
