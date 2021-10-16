@@ -7,6 +7,8 @@
   <p align="center"><img src="../resources/images/3d_parts2.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/3d_parts3.jpg" width="600"></p>
 <p>Και μετά συναρμολογήσαμε τον σκελετό της μακέτας.<p>
+  <p align="center"><img src="../resources/images/ergasia2.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/ergasia3.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/ergasia1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/frame1.jpg" width="600"></p>
   <a href="../README.md"><= Επιστροφή</a><br>
