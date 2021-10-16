@@ -4,6 +4,8 @@
   <p align="center"><img src="../resources/images/skiasi3d.jpg" width="600"></p>
 <p>Αρχικά στραντζάραμε την λαμαρίνα στη στράντζα του μηχανουργείου και μετά κάναμε οπές για να περάσουν οι οδηγοί.</p>
   <p align="center"><img src="../resources/images/skiasi1.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/skiasi2.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/skiasi3.jpg" width="600"></p>
 
 <p>Ακολουθεί video με τις δοκιμές ποτίσματος:</p>
   <p align="center">
