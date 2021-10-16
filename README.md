@@ -116,3 +116,5 @@
 Το έργο μπορεί να χρησιμοποιηθεί ως εποπτικό μέσο για την διδασκαλία των τεχνολογιών IOT σε μαθητές των τομέων Πληροφορικής, Ηλεκτρονικής - Ηλεκτρολογίας καθώς και για την μελέτη σύγχρονων καλλιεργητικών μεθόδων από μαθητές του τομέα Γεωπονίας και Τροφίμων.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1o03MPI0b7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/1o03MPI0b7I/0.jpg)](https://www.youtube.com/watch?v=1o03MPI0b7I)
