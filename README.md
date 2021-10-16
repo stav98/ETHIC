@@ -121,3 +121,5 @@
 <a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Μετάβαση" target="_blank"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
 
 [Hello, world!](https://www.google.com/?target=_blank)
+
+[temporarily disable liquid tag processing](https://shopify.github.io/liquid/tags/raw/){:title="Click to Visit the Raw page at Shopify"}{:target="_blank"}
