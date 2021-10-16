@@ -21,6 +21,7 @@
 <a href="/md_docs/en3.md">Κατασκευή μακέτας.</a><br>
 <a href="/md_docs/electrolog.md">Η ηλεκτρολογική εγκατάσταση.</a><br>
 <a href="/md_docs/potisma.md">Το σύστημα ποτίσματος.</a><br>
+<a href="/md_docs/skiasi.md">Το σύστημα σκίασης.</a><br>
 
 Συμμετέχοντες μαθητές
 =====================
