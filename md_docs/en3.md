@@ -11,4 +11,5 @@
   <p align="center"><img src="../resources/images/ergasia3.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/ergasia1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/frame1.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/frame2.jpg" width="600"></p>
   <a href="../README.md"><= Επιστροφή</a><br>
