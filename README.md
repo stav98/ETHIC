@@ -118,6 +118,6 @@
 
 [![Παρακολούθηση δοκιμών](https://img.youtube.com/vi/1o03MPI0b7I/0.jpg)](https://www.youtube.com/watch?v=1o03MPI0b7I)
 
-<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Μετάβαση" ><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
+<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Μετάβαση" target="_blank"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
 
 [Hello, world!](https://www.google.com/){target="_blank"}
