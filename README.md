@@ -114,3 +114,5 @@
 Τέλος ο εξυπηρετητής μπορεί να είναι οποιοσδήποτε υπολογιστής με Linux, στον οποίο θα τρέχει το mosquitto (MQTT Broker) και το Node Red. Εδώ μπορούμε να προσθέσουμε και μερικά δικά μας script σε Python τα οποία θα ακούν ή θα δημοσιεύουν σε mqtt topics. Εμείς για εξυπηρετητή σκοπεύουμε να χρησιμοποιήσουμε ένα Raspberry PI 3 ή 4.
 
 Το έργο μπορεί να χρησιμοποιηθεί ως εποπτικό μέσο για την διδασκαλία των τεχνολογιών IOT σε μαθητές των τομέων Πληροφορικής, Ηλεκτρονικής - Ηλεκτρολογίας καθώς και για την μελέτη σύγχρονων καλλιεργητικών μεθόδων από μαθητές του τομέα Γεωπονίας και Τροφίμων.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1o03MPI0b7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
