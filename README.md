@@ -33,10 +33,6 @@
     -//-     : <a href="en15.md">Κατασκευή πρωτότυπου ηλεκτρονικού κυκλώματος σε perfboard.</a><br>
     -//-     : Δοκιμές του πρωτοκόλλου LoRa WAN Lite. <br>
 <br>
-<div align="center">
-<img src="resources/images/ydreysi1.jpg" width="600"><br/>
-<img src="resources/images/ydreysi3.jpg" width="600"><br/>
-</div>
 
 Περιγραφή έργου - Στόχοι
 ========================
