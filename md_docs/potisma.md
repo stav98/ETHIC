@@ -6,4 +6,7 @@
   <p align="center"><img src="../resources/images/parteri.jpg" width="600"></p>
 <p>Η δεξαμενή με το θρεπτικό διάλυμα τοποθετείται χαμηλότερα από την μακέτα και με μια αντλία στέλνει το νερό στις ρίζες των φυτών.</p>
   <p align="center"><img src="../resources/images/deksameni.jpg" width="500"></p>
+  <p align="center"><img src="../resources/images/ydrefsi3.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/ydrefsi1.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/ydrefsi2.jpg" width="600"></p>
   <a href="../README.md"><= Επιστροφή</a><br>
