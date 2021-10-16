@@ -6,6 +6,10 @@
   <p align="center"><img src="../resources/images/3d_parts1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/3d_parts2.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/3d_parts3.jpg" width="600"></p>
+<p>Ακολουθεί video:</p>
+  <p align="center">
+<a href="https://www.youtube.com/watch?v=b0rH95nc7z4" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/b0rH95nc7z4/0.jpg"></a>
+</p>
 <p>Και μετά συναρμολογήσαμε τον σκελετό της μακέτας.<p>
   <p align="center"><img src="../resources/images/ergasia2.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/ergasia3.jpg" width="600"></p>
