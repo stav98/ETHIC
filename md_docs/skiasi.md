@@ -8,8 +8,8 @@
   <p align="center"><img src="../resources/images/skiasi3.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/skiasi4.jpg" width="600"></p>
 
-<p>Ακολουθεί video με τις δοκιμές ποτίσματος:</p>
+<p>Ακολουθεί video:</p>
   <p align="center">
-<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
+<a href="https://www.youtube.com/watch?v=TD45aBFNIYs" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/TD45aBFNIYs/0.jpg"></a>
 </p>
   <a href="../README.md"><= Επιστροφή</a><br>
