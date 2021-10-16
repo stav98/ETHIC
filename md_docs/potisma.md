@@ -9,4 +9,8 @@
   <p align="center"><img src="../resources/images/ydreysi3.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/ydreysi1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/ydreysi2.jpg" width="600"></p>
+<p>Ακολουθεί video με τις δοκιμές ποτίσματος:</p>
+  <p align="center">
+<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
+</p>
   <a href="../README.md"><= Επιστροφή</a><br>
