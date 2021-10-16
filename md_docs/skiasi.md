@@ -6,6 +6,7 @@
   <p align="center"><img src="../resources/images/skiasi1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/skiasi2.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/skiasi3.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/skiasi4.jpg" width="600"></p>
 
 <p>Ακολουθεί video με τις δοκιμές ποτίσματος:</p>
   <p align="center">
