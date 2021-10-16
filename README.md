@@ -34,7 +34,7 @@
 
 Υπεύθυνος καθηγητής: Σταύρος Φώτογλου ΠΕ86 πληροφορικής
 
-Στάδια υλοποίησης του έργου
+Χρονοδιάγραμμα - Στάδια υλοποίησης του έργου
 ===========================
 01/12/19 - 20/12/19 : <a href="en1.md">Αρχικός σχεδιασμός ιδέας</a><br/>
 08/01/20 - 18/01/20 : <a href="en2.md">Σχεδιασμός Hardware</a><br/>
@@ -48,8 +48,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Δοκιμές άρδευσης.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Κατασκευή συστήματος σκίασης - Δοκιμές.<br>
 Μάϊος '21    : Πέρασμα καλωδίωσης - ηλεκτρολογική εγκατάσταση.<br>
-    -//-     : Τοποθέτηση συστημάτων ποτίσματος - δοκιμές.<br>
-    -//-     : Τοποθέτηση νάυλον.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Τοποθέτηση συστημάτων ποτίσματος - δοκιμές.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Τοποθέτηση νάυλον.<br>
 Ιούνιος '21  : Διόρθωση αρχικών σχεδίων.<br>
     -//-     : <a href="en15.md">Κατασκευή πρωτότυπου ηλεκτρονικού κυκλώματος σε perfboard.</a><br>
     -//-     : Δοκιμές του πρωτοκόλλου LoRa WAN Lite. <br>
