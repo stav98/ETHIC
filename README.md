@@ -115,11 +115,7 @@
 
 Το έργο μπορεί να χρησιμοποιηθεί ως εποπτικό μέσο για την διδασκαλία των τεχνολογιών IOT σε μαθητές των τομέων Πληροφορικής, Ηλεκτρονικής - Ηλεκτρολογίας καθώς και για την μελέτη σύγχρονων καλλιεργητικών μεθόδων από μαθητές του τομέα Γεωπονίας και Τροφίμων.
 
+<p align="center">
+<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Μετάβαση"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
+</p>
 
-[![Παρακολούθηση δοκιμών](https://img.youtube.com/vi/1o03MPI0b7I/0.jpg)](https://www.youtube.com/watch?v=1o03MPI0b7I)
-
-<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Μετάβαση" target="_blank"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
-
-[Hello, world!](https://www.google.com/?target=_blank)
-
-[temporarily disable liquid tag processing](https://shopify.github.io/liquid/tags/raw/){:title="Click to Visit the Raw page at Shopify"}{:target="_blank"}
