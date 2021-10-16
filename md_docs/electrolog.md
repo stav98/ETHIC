@@ -5,5 +5,7 @@
   <p align="center"><img src="../resources/images/electric4.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/electric5.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/electric6.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/electric1.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/electric2.jpg" width="600"></p>
 
   <a href="../README.md"><= Επιστροφή</a><br>
