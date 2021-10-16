@@ -12,4 +12,8 @@
   <p align="center">
 <a href="https://www.youtube.com/watch?v=TD45aBFNIYs" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/TD45aBFNIYs/0.jpg"></a>
 </p>
+<p>Video με τις δοκιμές λειτουργίας της σκίασης:</p>
+  <p align="center">
+<a href="https://www.youtube.com/watch?v=dirjEc6v6v0" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/dirjEc6v6v0/0.jpg"></a>
+</p>
   <a href="../README.md"><= Επιστροφή</a><br>
