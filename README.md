@@ -54,10 +54,3 @@
 </ul>
 
 Υπεύθυνος καθηγητής: Σταύρος Φώτογλου ΠΕ86 πληροφορικής
-
-
-
-<p align="center">
-<a href="https://www.youtube.com/watch?v=1o03MPI0b7I" title="Μετάβαση"><img src="https://img.youtube.com/vi/1o03MPI0b7I/0.jpg"></a>
-</p>
-
