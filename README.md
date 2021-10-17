@@ -20,11 +20,12 @@
 <a href="/md_docs/en1.md">Σχεδιασμός μακέτας.</a><br>
 <a href="/md_docs/en3.md">Κατασκευή μακέτας.</a><br>
 <a href="/md_docs/electrolog.md">Η ηλεκτρολογική εγκατάσταση.</a><br>
-<a href="/md_docs/potisma.md">Το σύστημα ποτίσματος.</a><br>
-<a href="/md_docs/skiasi.md">Το σύστημα σκίασης.</a><br>
-<a href="/md_docs/eksaerismos.md">Το σύστημα εξαερισμού.</a><br>
-<a href="/md_docs/window.md">Τα παράθυρα οροφής.</a><br>
-<a href="/md_docs/sensors.md">Οι αισθητήρες.</a><br>
+Οι συσκευές εξόδου (ενεργοποιητές):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/potisma.md">Το σύστημα ποτίσματος.</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/skiasi.md">Το σύστημα σκίασης.</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/eksaerismos.md">Το σύστημα εξαερισμού.</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/window.md">Τα παράθυρα οροφής.</a><br>
+<a href="/md_docs/sensors.md">Οι συσκευές εισόδου (αισθητήρες).</a><br>
 <a href="/md_docs/en2.md">Τα ψηφιακά υποσυστήματα ελέγχου και επικοινωνίας.</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/thermo_node.md">Ο κόμβος ελέγχου των λειτουργιών του θερμοκηπίου.</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/LoRa_Gateway.md">Η πύλη LoRa Wan Lite.</a><br>
