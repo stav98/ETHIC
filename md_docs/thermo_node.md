@@ -8,7 +8,6 @@
 <p>Δεύτερη πλακέτα.</p>
   <p align="center"><img src="../LoRaWan_Lite/AVR_Node/hardware/thermo_node2.png" width="600"></p>
 <p>Χαρακτηρισμός συνδετήρων.</p>
-  
-
+<p align="center"><img src="../resources/images/connectors.png" width="800"></p>
   <a href="../README.md"><= Επιστροφή</a><br>
 
