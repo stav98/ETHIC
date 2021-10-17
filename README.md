@@ -25,6 +25,7 @@
 <a href="/md_docs/eksaerismos.md">Το σύστημα εξαερισμού.</a><br>
 <a href="/md_docs/window.md">Τα παράθυρα οροφής.</a><br>
 <a href="/md_docs/sensors.md">Οι αισθητήρες.</a><br>
+<a href="/md_docs/en2.md">Τα ψηφιακά υποσυστήματα ελέγχου και επικοινωνίας.</a><br>
 <a href="/md_docs/thermo_node.md">Ο κόμβος ελέγχου των λειτουργιών του θερμοκηπίου.</a><br>
 <a href="/md_docs/LoRa_Gateway.md">Η πύλη LoRa Wan Lite.</a><br>
 
