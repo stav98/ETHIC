@@ -4,5 +4,5 @@
   
 <p>Ακολουθεί video με την λειτουργία του εξαερισμού:</p>
   <p align="center">
-<a href="https://www.youtube.com/watch?v=H-O3UBB5Zus" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/H-O3UBB5Zus/0.jpg"></a>
+<a href="https://www.youtube.com/watch?v=H-O3UBB5Zus" title="Παρακολούθηση"><img src="https://img.youtube.com/vi/H-O3UBB5Zus/0.jpg"></a></p>
   <a href="../README.md"><= Επιστροφή</a><br>
