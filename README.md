@@ -20,7 +20,7 @@
 <a href="/md_docs/en1.md">Σχεδιασμός μακέτας.</a><br>
 <a href="/md_docs/en3.md">Κατασκευή μακέτας.</a><br>
 <a href="/md_docs/electrolog.md">Η ηλεκτρολογική εγκατάσταση.</a><br>
-Οι συσκευές εξόδου (ενεργοποιητές):
+Οι συσκευές εξόδου (ενεργοποιητές):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/potisma.md">Το σύστημα ποτίσματος.</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/skiasi.md">Το σύστημα σκίασης.</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/eksaerismos.md">Το σύστημα εξαερισμού.</a><br>
