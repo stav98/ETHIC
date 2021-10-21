@@ -14,7 +14,7 @@
 <table align="center">
  <tr>
   <td><img src="/resources/images/open1.jpg" width="400"></td>
-  <td><img src="/resources/images/closed2.jpg" width="300"></td>
+  <td><img src="/resources/images/closed2.jpg" width="330"></td>
   </tr>
  </table>
  
