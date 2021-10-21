@@ -17,6 +17,7 @@
   <p align="center"><img src="../resources/images/frame1.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/frame2.jpg" width="600"></p>
   <p align="center"><img src="../resources/images/frame3.jpg" width="600"></p>
+  <p align="center"><img src="../resources/images/closed1.jpg" width="600"></p>
   
 <p>Ακολουθεί video:</p>
   <p align="center">
