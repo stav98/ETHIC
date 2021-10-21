@@ -11,13 +11,14 @@
 
 Είμαστε μαθητές του τομέα πληροφορικής του 1ου ΕΠΑ.Λ. Πρέβεζας. Η υλοποίηση του έργου έγινε στα εργαστήρια του Ε.Κ. Πρέβεζας μετά την λήξη του διδακτικού ωραρίου.
 
-<p align="center"><img src="/resources/images/open1.jpg" width="700"></p>
+<p align="center">
 <table>
  <tr>
-  <td>kjkjk</td>
-  <td>lll12</td>
+  <td><img src="/resources/images/open1.jpg" width="400"></td>
+  <td><img src="/resources/images/closed2.jpg" width="400"></td>
   </tr>
  </table>
+ </p>
 
 Περιεχόμενα
 ===========
