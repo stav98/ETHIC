@@ -1,188 +1,124 @@
 #include <Arduino.h>
 #define MAX_MSG_SIZE    30
 
-void cmdInit(uint32_t speed);
-void cmdPoll();
-void cmd_display();
-void cmdAdd(char *name, void (*func)(int argc, char **argv));
-uint32_t cmdStr2Num(char *str, uint8_t base);
+typedef void (*Func)(int argc, char **argv);
 
-// command line structure
-typedef struct _cmd_t
-        {
-         char *cmd;
-         void (*func)(int argc, char **argv);
-         struct _cmd_t *next;
-        } cmd_t;
+Func execFunc;
 
-// command line message buffer and pointer
-static uint8_t msg[MAX_MSG_SIZE];
-static uint8_t *msg_ptr;
-
-// linked list for command table
-static cmd_t *cmd_tbl_list, *cmd_tbl;
-
-// text strings for command prompt (stored in flash)
+typedef struct _L_cmd
+    {
+	  const char *cmd;
+	  const Func ExecSub;
+	  const struct _L_cmd *next;
+	} L_cmd;
+	
+	
 const char cmd_prompt[] PROGMEM = "CMD >> ";
-const char cmd_unrecog[] PROGMEM = "CMD: Bad Command.";
+const char cmd_unrecog[] PROGMEM = "CMD: Command not recognized.";
 
-/**************************************************************************/
-/*!
-    Generate the main command prompt
-*/
-/**************************************************************************/
-void cmd_display()
-{
-  char buf[50];
-  strcpy_P(buf, cmd_prompt);
-  Serial.print(buf);
+void cmdInit(uint32_t);
+void cmdPoll(void);
+void cmd_handler(void);
+void cmd_parse(char*);
+void cmd_display(void);
+
+byte msg[MAX_MSG_SIZE], *msg_ptr;
+
+//Συνδεδεμένη λίστα με τις εντολές στην Program Memory
+L_cmd *cmd_tbl;
+
+void cmdInit(uint32_t speed)
+{    
+ msg_ptr = msg; //Αρχικοποίηση του δείκτη msg_ptr
+ 
+    cmd_display(); //Εμφάνισε prompt
+    Serial.begin(speed);
 }
 
-/**************************************************************************/
-/*!
-    Parse the command line. This function tokenizes the command input, then
-    searches for the command table entry associated with the commmand. Once found,
-    it will jump to the corresponding function.
-*/
-/**************************************************************************/
-void cmd_parse(char *cmd)
+void cmdPoll(void)
 {
-  uint8_t argc, i = 0;
-  char *argv[30];
-  char buf[50];
-  cmd_t *cmd_entry;
-  fflush(stdout);
-  // parse the command line statement and break it up into space-delimited
-  // strings. the array of strings will be saved in the argv array.
-  //Αν η εντολή δεν έχει μηδενικό μήκος
-  if (strlen(cmd) > 0)
-     {
-      argv[i] = strtok(cmd, " "); //Χώρισε βάσει των κενών
-      do
-        {
-         argv[++i] = strtok(NULL, " ");
-        } while ((i < 30) && (argv[i] != NULL));
-      // save off the number of arguments for the particular command.
-      argc = i;
-      // parse the command table for valid command. used argv[0] which is the
-      // actual command name typed in at the prompt
-      for (cmd_entry = cmd_tbl; cmd_entry != NULL; cmd_entry = cmd_entry->next)
-          {
-           if (!strcmp(argv[0], cmd_entry -> cmd))
-              {
-               cmd_entry -> func(argc, argv);
-               cmd_display();
-               return;
-              }
-          }
-      // command not recognized. print message and re-generate prompt.
-      strcpy_P(buf, cmd_unrecog);
-      Serial.println(buf);
-     }
-  cmd_display(); //Εμφάνισε prompt
+ while (Serial.available())
+       {
+        cmd_handler();
+       }
 }
 
-/**************************************************************************/
-/*!
-    This function processes the individual characters typed into the command
-    prompt. It saves them off into the message buffer unless its a "backspace"
-    or "enter" key.
-*/
-/**************************************************************************/
 void cmd_handler()
 {
-  char c = Serial.read();
-  switch (c)
-         {
-          case '\r':
-            // terminate the msg and reset the msg ptr. then send
-            // it to the handler for processing.
-            *msg_ptr = '\0';
-            Serial.print("\r\n");
-            cmd_parse((char *)msg);
-            msg_ptr = msg;
-            break;
-          case '\b':
-          case 127:
-            // backspace
-            Serial.print(c);
-            if (msg_ptr > msg)
-               {
-                msg_ptr--;
-               }
-            break;
-          default:
-            // normal character entered. add it to the buffer
-            Serial.print(c);
-            *msg_ptr++ = c;
-            break;
-         }
-}
+    char c = Serial.read();
 
-/**************************************************************************/
-/*!
-    This function should be set inside the main loop. It needs to be called
-    constantly to check if there is any available input at the command prompt.
-*/
-/**************************************************************************/
-void cmdPoll()
-{
-  while (Serial.available())
+    switch (c)
+    {
+	//Πατήθηκε το enter
+    case '\r':
+        *msg_ptr = '\0';	//Τερμάτισε το msg με \0
+		Serial.print("\r\n"); //Άλλαξε γραμμή
+        cmd_parse((char *)msg);	//Κάλεσε συνάρτηση ελέγχου της εντολής
+        msg_ptr = msg;		//Δείξε στην αρχή του μηνύματος για την επόμενη φορά
+        break;
+    //Πατήθηκε το backspace
+    case '\b':
+    case 127:  //Αν χρησιμοποιώ το putty //Κανονικά '\b'
+        Serial.print(c);
+        if (msg_ptr > msg)
         {
-         cmd_handler();
+            msg_ptr--;
         }
+        break;
+    //Αποθήκευσε τους χαρακτήρες στο msg[] ώστε να δημιουργηθεί η εντολή
+    default:
+	    Serial.print(c);
+        *msg_ptr++ = c;
+        break;
+    }
 }
 
-/**************************************************************************/
-/*!
-    Initialize the command line interface. This sets the terminal speed and
-    and initializes things.
-*/
-/**************************************************************************/
-void cmdInit(uint32_t speed)
+void cmd_parse(char *cmd)
 {
-  // init the msg ptr
-  msg_ptr = msg;
-  // init the command table
-  cmd_tbl_list = NULL;
-  // set the serial speed
-  Serial.begin(speed);
+    byte argc, i = 0;
+    char *argv[30];
+    char buf[40];
+    L_cmd *cmd_entry;
+    // parse the command line statement and break it up into space-delimited
+    // strings. the array of strings will be saved in the argv array.
+    if (strlen(cmd) > 0)
+       {
+        argv[i] = strtok(cmd, " ");
+        do
+          {
+           argv[++i] = strtok(NULL, " ");
+          } while ((i < 30) && (argv[i] != NULL));
+    
+        //Αποθήκευσε τον αριθμό των ορισμάτων
+        argc = i;
+	
+	    //Αν δεν πατήθηκε απλώς enter
+	    if (argv[0] != NULL)
+	       {
+	        //Ψάξε στο λεξικό να βρεις την εντολή που δόθηκε στο prompt. Το argv[0] έχει την εντολή
+	        for (cmd_entry = cmd_tbl; cmd_entry != NULL; cmd_entry = (L_cmd*)pgm_read_word(&cmd_entry->next))
+                {
+                 if (!strcmp_P(argv[0], (char*)pgm_read_word(&cmd_entry->cmd)))
+                    {
+                     execFunc = (Func)pgm_read_word(&cmd_entry->ExecSub);
+			         execFunc(argc, argv);
+			         cmd_display();
+                     return;
+                    }
+                }
+            //Η εντολή δεν αναγνωρίστηκε. Εμφάνισε μήνυμα λάθους
+            strcpy_P(buf, cmd_unrecog);
+            Serial.println(buf);
+           }
+       }
+    
+	//Εμφάνισε το prompt
+	cmd_display();
 }
 
-/**************************************************************************/
-/*!
-    Add a command to the command table. The commands should be added in
-    at the setup() portion of the sketch.
-*/
-/**************************************************************************/
-void cmdAdd(char *name, void (*func)(int argc, char **argv))
+void cmd_display()
 {
-  // alloc memory for command struct
-  cmd_tbl = (cmd_t *)malloc(sizeof(cmd_t));
-
-  // alloc memory for command name
-  char *cmd_name = (char *)malloc(strlen(name)+1);
-
-  // copy command name
-  strcpy(cmd_name, name);
-
-  // terminate the command name
-  cmd_name[strlen(name)] = '\0';
-
-  // fill out structure
-  cmd_tbl->cmd = cmd_name;
-  cmd_tbl->func = func;
-  cmd_tbl->next = cmd_tbl_list;
-  cmd_tbl_list = cmd_tbl;
-}
-
-/**************************************************************************/
-/*!
-    Convert a string to a number. The base must be specified, ie: "32" is a
-    different value in base 10 (decimal) and base 16 (hexadecimal).
-*/
-/**************************************************************************/
-uint32_t cmdStr2Num(char *str, uint8_t base)
-{
-  return strtol(str, NULL, base);
+    char buf[40];
+    strcpy_P(buf, cmd_prompt);
+    Serial.print(buf);
 }

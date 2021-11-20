@@ -11,7 +11,7 @@ void enterSleep(void);
 #include "lora_modem.h"
 
 #define CS_PIN                10  //LoRa radio Chip Select (CS) pin
-#define RESET_PIN             9   //LoRa radio Reset pin
+#define RESET_PIN             -1  //9   //LoRa radio Reset pin
 #define IRQ_PIN0              2   //Το interrupt Pin πρέπει να είναι Interrupt Pin
 #define IRQ_PIN1              3   //Το interrupt Pin πρέπει να είναι Interrupt Pin
 
@@ -28,7 +28,7 @@ void enterSleep(void);
 #define WAIT_FOR_RX1    0
 #define RX1_WIND_OPEN   1
 #define RX2_WIND_OPEN   2
-#define RX_DONE        3
+#define RX_DONE         3
 
 unsigned int ChkSum(byte*, byte, byte);
 

@@ -1,11 +1,11 @@
 /*** LoRa WAN Lite Node ***/
 #include <Arduino.h>
-#include <avr/sleep.h>
-#include <avr/power.h>
-//#include <avr/wdt.h>
+#include <avr/pgmspace.h>
+//#include <avr/sleep.h>
 #include "definitions.h"
 #include "thermo.h"
 #include "functions.h"
+#include "thermo_functions.h"
 #include "cmd.h"
 #include "commands.h"
 #include "encrypt.h"
@@ -21,73 +21,6 @@ char m[] =    "Test Preveza: ";
 //byte yy;
 String tmp_str;
 unsigned long cnt; //Μετρητής για την γραμμή μηνύματος -θα φύγει στο τελικό
-
-ISR (PCINT1_vect) 
-{
- PCMSK1 &= B11111011;
- f_wdt = true;
- PCMSK1 |= B00000100;
-}
-
-void win1_open()
-{
-  if (readHC597() & (1 << DIN_W1T1))
-     {
-     W1_OPEN();
-     analogWrite(WINDOW_SPEED_PIN, 180);
-     }
-  else
-     {
-      W1_STOP();
-      analogWrite(WINDOW_SPEED_PIN, 0);
-     }
- writeHC595(dout_status);
-}
-
-void win1_close()
-{
-  if (readHC597() & (1 << DIN_W1T2))
-     {
-     W1_CLOSE();
-     analogWrite(WINDOW_SPEED_PIN, 180);
-     }
-  else
-     {
-      W1_STOP();
-      analogWrite(WINDOW_SPEED_PIN, 0);
-     }
- writeHC595(dout_status);
-}
-
-void win2_open()
-{
-  if (readHC597() & (1 << DIN_W2T1))
-     {
-     W2_OPEN();
-     analogWrite(WINDOW_SPEED_PIN, 180);
-     }
-  else
-     {
-      W2_STOP();
-      analogWrite(WINDOW_SPEED_PIN, 0);
-     }
- writeHC595(dout_status);
-}
-
-void win2_close()
-{
-  if (readHC597() & (1 << DIN_W2T2))
-     {
-     W2_CLOSE();
-     analogWrite(WINDOW_SPEED_PIN, 180);
-     }
-  else
-     {
-      W2_STOP();
-      analogWrite(WINDOW_SPEED_PIN, 0);
-     }
- writeHC595(dout_status);
-}
 
 void skia_open()
 {
@@ -133,7 +66,7 @@ void setup()
   pinMode(LED1, OUTPUT);
   blink_times_d(3, 15, 400);  //Αναβόσβησε 3 φορές γρήγορα
   //Εμφάνισε κατάσταση
-  Serial.println(F("***** ETHIC (c)2021 Stavros S. Fotoglou *****"));
+  Serial.println(F("***** ETHIC [Stavros S. Fotoglou - 1o EPAL PREVEZAS - EK PREVEZAS] *****"));
   lora_init();
   randomSeed(analogRead(A2));
   //Παραγωγή κλειδιών βάσει του κλειδιού 64bit και αποθήκευση στον καθολικό πίνακα keys 16x8
@@ -144,9 +77,11 @@ void setup()
   init_thermo();  //Αρχικοποίηση θερμομέτρων 1-wire
   dht.begin();    //Αρχικοποίηση DHT22
   writeHC595(0);  //Κάνε Off όλες τις εξόδους αν έχει σκουπίδια μετά το reset
-  add_commands(); //Πρόσθεσε εντολές
+  //add_commands(); //Πρόσθεσε εντολές
+  init_commands();
   //analogWrite(FAN_PIN, 80); //80 - 200
   delay(1000);
+  win_speed = 200; //160 - 255
   interval = millis();
 }
 
@@ -154,18 +89,7 @@ void loop()
 {
  //Αν δεν είναι η ώρα για μέτρηση και αποστολή φύγε χωρίς να ξυπνήσεις
  cmdPoll();
- //Serial.println(readHC597());
- //win1_open();
- //win1_close();
-
- //win2_open();
- //win2_close();
- 
- 
- //skia_close();
- //skia_open();
- //if (!f_wdt) return;   
- if ((millis() - interval) >= INTERVAL_MS)
+ if ((millis() - interval) > INTERVAL_MS)
     {
      sample_flag = true;
      f_wdt = true;
@@ -193,14 +117,5 @@ void loop()
  {
  ClassA_Dev();
  }
- //sample_flag = true; 
- //f_wdt = false;
- //Serial.println(readHC597());
- //digitalWrite(STCP_PIN,HIGH);
- //delay(5);
- //digitalWrite(STCP_PIN,LOW);
- //delay(1000);
- //ReadSensors();
- //Serial.println((float)(5 * analogRead(A0)) / 1023);
- //delay(200);
+ act();
 }

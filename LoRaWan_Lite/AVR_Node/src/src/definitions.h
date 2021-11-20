@@ -1,3 +1,5 @@
+#define VERSION                "1.0 beta"
+
 #define STATUS_LED             9
 #define LED1                  13
 #define SDATA_IN_PIN          19  //A5-Διαβάζει σειριακά δεδομένα από το HC597
@@ -10,10 +12,10 @@
 #define IRRAD_PIN             A1  //Αναλογική είσοδος για ένταση ηλιακής ακτινοβολίας
 #define WINDOW_SPEED_PIN       6  //Το PWM pin για ταχύτητα παραθύρων
 
-#define DIN_W1T1               0  //Τερματικός T1 για παράθυρο 1 - Ανοιχτό
-#define DIN_W1T2               1  //Τερματικός T2 για παράθυρο 1 - Κλειστό
-#define DIN_W2T1               2  //Τερματικός T1 για παράθυρο 2 - Ανοιχτό
-#define DIN_W2T2               3  //Τερματικός T2 για παράθυρο 2 - Κλειστό
+#define DIN_W1T1               0  //Τερματικός T1 για παράθυρο 1 - Ανοιχτό ή 'A' στην κλέμα
+#define DIN_W1T2               1  //Τερματικός T2 για παράθυρο 1 - Κλειστό ή 'B' στην κλέμα
+#define DIN_W2T1               2  //Τερματικός T1 για παράθυρο 2 - Ανοιχτό ή 'A' στην κλέμα
+#define DIN_W2T2               3  //Τερματικός T2 για παράθυρο 2 - Κλειστό ή 'B' στην κλέμα
 #define DIN_SKT1               4  //Τερματικός T1 για κουρτίνα σκίασης - Μαζεμένη
 #define DIN_SKT2               5  //Τερματικός T2 για κουρτίνα σκίασης - Απλωμένη
 #define DIN_MOIST              6  //Στάθμη νερού πλήρης
@@ -38,10 +40,7 @@
 //#define CONFIRM_REQ           0x00  //Unconfirmed
 #define CONFIRM_REQ           0x80  //Confirmed
 
-//Για λειτουργία Watch Dog
-#define INTERVAL              8   //Κάθε 60 sec / 8 = 7.5 = 8   ---- 8 * 8 = 64 sec
-
-#define INTERVAL_MS           60000
+#define INTERVAL_MS           300000  //Κάθε 5 λεπτά
 #define RX1_TIME              1000000 //1sec
 #define RX2_TIME              2000000 //2sec
 #define RX1_OPEN_TOLLER       100 //μsec ο χρόνος που κάνει να εκτελεστεί η receive_single()
@@ -65,7 +64,7 @@ byte dig[] = {0, 0, 0, 0};
 
 int rssi = 0; //Ένταση σήματος
 unsigned long rx_time; //Ο μετρητής για το άνοιγμα του παραθύρου λήψης
-unsigned long interval;
+unsigned long interval; //Κάθε πότε κάνει μέτρηση και εκπέμπει
 byte rx_state;
 unsigned int Fcnt; //Α/Α πλαισίου
 const unsigned int NodeAddress = NODE_ADDRESS; //Η φυσική διεύθυνση αυτού του κόμβου
@@ -107,3 +106,7 @@ byte dout_status = 0;
 #define SKIA_OPEN()   { dout_status |= (1 << DOUT_SK_C2); dout_status &= ~(1 << DOUT_SK_C1); }  //Μαζεύει
 #define SKIA_CLOSE()  { dout_status |= (1 << DOUT_SK_C1); dout_status &= ~(1 << DOUT_SK_C2); }  //Απλώνει
 #define SKIA_STOP()   { dout_status &= ~(1 << DOUT_SK_C1); dout_status &= ~(1 << DOUT_SK_C2); }
+
+#define MAX_WIN_TIME      3000
+#define MAX_SKIA_TIME    12000
+byte win_speed; //Ταχύτητα κίνησης παραθύρων
