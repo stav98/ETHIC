@@ -3,5 +3,5 @@
 Ακολουθούν μερικά στιγμιότυπα από την διεπαφή Web της πύλης
 
 <img src="/LoRa_GateWay/gw_sc1.jpg" width="700">
-<img src="/LoRa_GateWay/gw_sc2.jpg" width="500">
+<img src="/LoRa_GateWay/gw_sc2.jpg" width="700">
 <img src="/LoRa_GateWay/gw_sc3.jpg" width="700">
