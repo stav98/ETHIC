@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoRaWAN Lite GW : Ρυθμίσεις LORA</title>
+  <!-- Setup Working Parameters -->
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() //Όταν φορτώσει η σελίδα
+    {
+      $('#SF').prop("selectedIndex", (%SF% - 7));
+      $('#CR').prop("selectedIndex", (%CR% - 5));
+      $('#POWER').prop("selectedIndex", (%POWER% - 2));
+      var bwidx, bw = %BW%;
+      switch (bw)
+         {
+           case 62500:
+              bwidx = 0;
+              break;
+           case 125000:
+              bwidx = 1;
+              break;
+           case 250000:
+              bwidx = 2;
+              break;
+         }
+      $('#BW').prop("selectedIndex", bwidx);
+      //Αν πατήθηκε το κουμπί Save
+    $("#SaveBtn").click(function() {
+              var url = "/save_lora"; // the script where you handle the form input.
+              var data = "L1=" + $('#FREQ').val() + "&L2=" + $('#SF').val() + "&L3=" + $('#CR').val() +
+                        "&L4=" + $('#BW').val() + "&L5=" + parseInt($('#SYNC').val(), 16) + "&L6=" + $('#POWER').val();
+              $.ajax({
+                      type: "GET",
+                      url: url,
+                      data: data, //Serialize τα δεδομένα της φόρμας
+                      success: function(){location.reload();} //Αν έγινε επιτυχώς επαναφόρτωσε τη σελίδα
+                     });
+              return false; //avoid to execute the actual submit of the form.
+              });
+    });
+  </script>
+ </head>
+
+ <body>
+  <div class="container">
+   <center>
+	   <h1>LoRaWAN Lite GW</h1>
+     <h1>Ρυθμίσεις LORA</h1>
+   </center>
+   <table align="center" width="365">
+    <tr bgcolor="#c2f9df">
+      <td>
+        <label for="FREQ">Συχνότητα:</label>
+        <input type="text" id="FREQ" value="%FREQ%" style="width:140px; text-align:right;">Hz
+      </td>
+    </tr>
+    <tr bgcolor="#c2f9df">
+      <td>
+        <label for="SF">SF:</label>
+        <select id="SF">
+          <option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+        </select>
+      </td>
+    </tr>
+    <tr bgcolor="#c2f9df">
+      <td>
+        <label for="CR">CR:</label>
+        <select id="CR">
+          <option value="5">4/5</option><option value="6">4/6</option><option value="7">4/7</option><option value="8">4/8</option>
+        </select>
+      </td>
+    </tr>
+    <tr bgcolor="#c2f9df">
+      <td>
+        <label for="BW">BW:</label>
+        <select id="BW">
+          <option value="62500">62.5</option><option value="125000">125</option><option value="250000">250</option>
+        </select>KHz
+      </td>
+    </tr>
+    <tr bgcolor="#c2f9df">
+      <td>
+        <label for="POWER">Ισχύς εξόδου:</label>
+        <select id="POWER">
+          <option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option>
+          <option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option>
+          <option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option>
+        </select>dBm
+      </td>
+    </tr>
+    <tr bgcolor="#c2f9df">
+      <td>
+        <label for="SYNC">Sync Word:</label>
+        <input type="text" id="SYNC" value="%SYNC%" style="width:80px; text-align:right;">Hex
+      </td>
+    </tr>
+   </table>
+
+   <center>
+     <button type="button" id="SaveBtn">Αποθήκευση</button>&nbsp;
+     <a href="/">Επιστροφή</a><br><br><small>V %VERSION% (c)2022 <a href="https://sv6gmp.blogspot.gr" target="_blank">Stavros S. Fotoglou</small></a>
+   </center>
+  </div>
+ </body>
+</html>
