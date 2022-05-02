@@ -6,3 +6,6 @@ Flash Size: 4M(3 SPIFFS)
 Flash Mode: QIO
 Flash Frequency: 40MHz
 Reset Method: Node MCU ή DTR
+
+Για ανέβασμα στο σύστημα αρχείων από αριστερά Platform IO κεφαλάκι, Miscellaneous, PlatformIO Core CLI γράφω:
+pio run --target uploadfs
