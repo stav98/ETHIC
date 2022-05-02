@@ -2,6 +2,6 @@
 Το Μάρτιο 2022 πρόσθεσα web interface ώστε να γίνεται ευκολότερα η παραμετροποίηση της πύλης.
 Ακολουθούν μερικά στιγμιότυπα από την διεπαφή Web της πύλης
 
-<img src="/LoRa_GateWay/gw_sc1.jpg" width="600" border="0">
-<img src="/LoRa_GateWay/gw_sc2.jpg">
-<img src="/LoRa_GateWay/gw_sc3.jpg">
+<img src="/LoRa_GateWay/gw_sc1.jpg" width="700">
+<img src="/LoRa_GateWay/gw_sc2.jpg" width="500">
+<img src="/LoRa_GateWay/gw_sc3.jpg" width="700">
