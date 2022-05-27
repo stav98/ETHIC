@@ -39,6 +39,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/thermo_node.md">Ο κόμβος ελέγχου των λειτουργιών του θερμοκηπίου.</a><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/md_docs/LoRa_Gateway.md">Η πύλη LoRa Wan Lite.</a><br>
 <a href="/md_docs/en4.md">Το πρωτόκολλο LoRa WAN Lite.</a><br>
+<a href="https://github.com/stav98/ETHIC/tree/master/NodeRed">Node Red - Η λογική των αυτοματισμών και το γραφικό περιβάλλον.</a><br>
+
+
 
 Συμμετέχοντες μαθητές
 =====================
