@@ -13,8 +13,8 @@
 
 <table align="center">
  <tr>
-  <td><img src="/resources/images/open1.jpg" height="400"></td>
-  <td><img src="/resources/images/closed2.jpg" height="400"></td>
+  <td><img src="/resources/images/open1.jpg" width="500"></td>
+  <td><img src="/resources/images/closed2.jpg" width="500"></td>
   </tr>
  </table>
  
