@@ -76,6 +76,10 @@
  <tr>
   <td><img src="/resources/images/open2.jpg" height="400"></td>
   <td><img src="/resources/images/closed3.jpg" height="400"></td>
-  </tr>
+ </tr>
+ <tr>
+  <td><img src="/resources/images/NodeRedUI1.jpg" height="400"></td>
+  <td><img src="/resources/images/NodeRedUI2.jpg" height="400"></td>
+ </tr>
  </table>
 
