@@ -1,1 +1,4 @@
-1111
+<p>Στο Raspberry PI 3 ή 4 εγκαθιστούμε το Node Red. Εναλλακτικά μπορεί να εγκατασταθεί και σε κάποιον απομακρυσμένο server. Το Node Red δημοσιεύει και δέχεται μηνύματα από τον τοπικό ή απομακρυσμένο mqtt broker και εμφανίζει με όμορφο γραφικό τρόπο τα αποτελέσματα. Επίσης μπορούμε να στείλουμε εντολές στο θερμοκήπιο μέσα από το γραφικό περιβάλλον. Εδώ πρέπει να επισημάνουμε ότι τα τρία προγράμματα τα οποία τρέχουν τοπικά στο Raspberry PI, δηλ. ο Network Server ο οποίος δέχεται και στέλνει πακέτα LoRa Wan Lite στην πύλη, o MQTT broker mosquitto ο οποίος δέχεται και στέλνει μηνύματα στα Nodes μέσα από τον Network Server και την πύλη και το Node Red το οποίο υλοποιεί την λογική λειτουργίας και το γραφικό περιβάλλον, μπορούν να βρίσκονται σε ξεχωριστούς server στο διαδίκτυο.<p>
+<p align="center"><img src="https://github.com/stav98/ETHIC/blob/master/resources/images/NodeRedUI1.jpg" width="600"></p>
+<p align="center"><img src="https://github.com/stav98/ETHIC/blob/master/resources/images/NodeRedUI2.jpg" width="600"></p>
+<p align="center"><img src="https://github.com/stav98/ETHIC/blob/master/resources/images/NodeRedUI3.jpg" width="600"></p>
