@@ -270,6 +270,11 @@ class LoRaClass : public Stream
 
            // set auto AGC
            writeRegister(REG_MODEM_CONFIG_3, 0x04);
+           //Σε χαμηλά data rates Ts > 16msec
+           //writeRegister(REG_MODEM_CONFIG_3, 0x12);
+           
+           //No AGC
+           //writeRegister(REG_MODEM_CONFIG_3, 0x00);
 
            // set output power to 17 dBm
            setTxPower(17);
@@ -570,16 +575,16 @@ class LoRaClass : public Stream
                    // subtract 3 from level, so 18 - 20 maps to 15 - 17
                    level -= 3;
                    // High Power +20 dBm Operation (Semtech SX1276/77/78/79 5.4.3.)
-                   writeRegister(REG_PA_DAC, 0x87);
-                   setOCP(140);
+                   writeRegister(REG_PA_DAC, 0x87); //Αν το level είναι 15 θα βγάλει 20dBm δηλ 20 - 3 = 17 - 2 τελευταία γραμμή = 15 
+                   setOCP(140); //(Def:140) Βάλε το ρεύμα του ενισχυτή στα 140mA μπορεί να πάει έως 240 (241?)
                   } 
                else 
                   {
                    if (level < 2) 
                        level = 2; 
                    //Default value PA_HF/LF or +17dBm
-                   writeRegister(REG_PA_DAC, 0x84);
-                   setOCP(100);
+                   writeRegister(REG_PA_DAC, 0x84); 
+                   setOCP(100); //(Def:100) Βάλε το ρεύμα του ενισχυτή στα 100mA
                   }
                writeRegister(REG_PA_CONFIG, PA_BOOST | (level - 2));
               }

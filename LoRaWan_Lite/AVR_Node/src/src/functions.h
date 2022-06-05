@@ -1,3 +1,6 @@
+//Κάνει software Reset τον AVR
+void(* resetFunc)(void) = 0;
+
 //Διαβάζει τα 8 bit μέσα από τον καταχωρητή ολίσθησης Parallel In to Serial Out
 byte readHC597()
 {
@@ -34,31 +37,24 @@ void writeHC595(byte x)
 
 void ReadSensors()
 {
- //char t_stamp[22];
-     //------------ Διάβασε τιμή εσωτερικού αισθητήρα ------------------------
-     float new_t_int = int_temp.getTempCByIndex(0);
-     if (new_t_int == -127) //Αν υπάρχει CRC Error
+     //------------ Διάβασε τιμή εξωτερικού αισθητήρα ------------------------
+     float new_t_ext = ext_temp.getTempCByIndex(0);
+     if (new_t_ext == -127) //Αν υπάρχει CRC Error
          Serial.println(F("Failed to read from Internal sensor!"));
      else
         {
-         t_int =  new_t_int;
-         T_int_S += t_int; //Άθροισμα για υπολογισμό MO κάθε 5 λεπτά
-         if (t_int > max_t_int)
+         t_ext =  new_t_ext;
+         T_ext_S += t_ext; //Άθροισμα για υπολογισμό MO κάθε 5 λεπτά
+         if (t_ext > max_t_ext)
             {
-             max_t_int = t_int;
-             //curDateTime().toCharArray(t_stamp, 22);
-             //sprintf(max_t_int_timestamp, "[%s] %2.1f°C", t_stamp, max_t_int);
+             max_t_ext = t_ext;
             }
-         //sprintf(t_int_str, "%2.1f", (double) t_int); //Kρατάει μόνο ένα δεκαδικό ψηφίο
-         //t_int_str = t_int.c_str();
-         
-
-         Serial.println(String(t_int).substring(0,4)); //Debug 
+         t_ext_str = String(t_ext).substring(0,4);
+         //Serial.println(t_ext_str); //Debug 
         }
-     //ext_temp.requestTemperatures();
-     int_temp.requestTemperatures();
+     ext_temp.requestTemperatures();
 
-      //------------ Διάβασε θερμοκρασία από αισθητήρα DHT22 -------------------
+      //------------ Διάβασε θερμοκρασία από εσωτερικό αισθητήρα DHT22 -------------------
      float newT = dht.readTemperature();
      //Αν απέτυχε το διάβασμα να μην αλλάξει την παλιά τιμή
      if (isnan(newT)) 
@@ -70,17 +66,13 @@ void ReadSensors()
          if (dht_temp > max_dht_temp)
             {
              max_dht_temp = dht_temp;
-             //curDateTime().toCharArray(t_stamp, 22);
-             //sprintf(max_dht_temp_timestamp, "[%s] %2.1f°C", t_stamp, max_dht_temp);
             }
          if (dht_temp < min_dht_temp)
             {
              min_dht_temp = dht_temp;
-             //curDateTime().toCharArray(t_stamp, 22);
-             //sprintf(min_dht_temp_timestamp, "[%s] %2.1f°C", t_stamp, min_dht_temp);
             }
-         //sprintf(dht_temp_str, "%2.1f", dht_temp);
-         Serial.println(String(dht_temp).substring(0,4)); //Debug 
+         t_int_str = String(dht_temp).substring(0,4);
+         //Serial.println(t_int_str); //Debug 
         }
      //------------ Διάβασε υγρασία από αισθητήρα DHT22 -----------------------
      float newH = dht.readHumidity();
@@ -94,19 +86,23 @@ void ReadSensors()
           if (humidity > max_humidity)
             {
              max_humidity = humidity;
-             //curDateTime().toCharArray(t_stamp, 22);
-             //sprintf(max_Humidity_timestamp, "[%s] %3.1f", t_stamp, max_humidity);
             }
           if (humidity < min_humidity)
             {
              min_humidity = humidity;
-             //curDateTime().toCharArray(t_stamp, 22);
-             //sprintf(min_Humidity_timestamp, "[%s] %3.1f", t_stamp, min_humidity);
             }
-          //sprintf(hum_str, "%2.1f", humidity); //Δύο ακέραια και ένα δεκαδικό
-          //Serial.println(hum_str); //Debug
-          Serial.println(String(humidity).substring(0,4)); //Debug 
+          hum_str = String(humidity).substring(0,4);
+          //Serial.println(hum_str); //Debug 
          }
+     //-------------- Διάβασε Ph ----------------------------------------------
+     ph = ((882 - analogRead(PH_PIN)) * 0.012) + 2.5; //ph
+     ph_str = String(ph).substring(0,4);
+     //Serial.println(ph_str); //Debug 
+
+     //-------------- Διάβασε Irradiation --------------------------------------
+     irrad = analogRead(IRRAD_PIN);
+     irrad_str = String(irrad).substring(0,4);
+     //Serial.println(irrad_str); //Debug 
 }
 
 void blink_times_d(byte n, byte duty_cycle, unsigned int period)
@@ -122,7 +118,6 @@ void blink_times_d(byte n, byte duty_cycle, unsigned int period)
      digitalWrite(STATUS_LED, LOW);
      delay(off_delay);
     }
- //wdt_reset();
 }
 
 byte blnk_times = 0;
@@ -229,4 +224,11 @@ void print_table(byte *table, byte len, char base)
          Serial.println(table[i]);
      else if (base == 'h')
          Serial.println(table[i], HEX);
+}
+
+//Μετατρέπει τις κλίμακες 0-5 σε ταχύτητα PWM των ανεμιστήρων
+byte get_air_speed(byte i)
+{
+ byte vals[] = {0, 70, 80, 90, 100, 200};
+ return vals[i];
 }

@@ -206,12 +206,12 @@ byte encrypt(byte *msg, byte *out)
 
 //Αποκρυπτογράφιση απλοποιημένου DES 
 //inp: δεδομένα εισόδου, out: δεδομένα εξόδου, mlen: μήκος
-void decrypt(byte *inp, char *out, byte mlen)
+void decrypt(byte *inp, char *out, byte start, byte mlen)
 {
  byte i, j, k, idx = 0, l[8]; 
  char o[9];
  k = 0;
- for (i = 6; i < mlen; i++) //Από το 6 ξεκινάει η κωδικοποιημένη πληροφορία
+ for (i = start; i < mlen; i++) //Από το 6 ξεκινάει η κωδικοποιημένη πληροφορία όταν δεν έχει options
      {   
       l[k++] = inp[i]; //Χώρισε σε οκτάδες   
       if (k > 7) //Αν συμπληρώθηκε οκτάδα

@@ -4,7 +4,7 @@
 #include <DHT.h>
 
 //-------------------- Θερμόμετρα One Wire --------------------------
-#define OW_INT_PIN           17  //A3
+#define OW_EXT_PIN           17  //A3
 #define RESOLUTION            9  //9, 10, 11, 12 bit
 //------------------------ DHT22 ------------------------------------
 #define DHTPIN               18 //A4 
@@ -12,20 +12,21 @@
 
 #define PERIOD                1000 //Περίοδος μετρήσεων
 
-OneWire ow_int(OW_INT_PIN);
-DallasTemperature int_temp(&ow_int);
-DeviceAddress int_temp_addr;
+OneWire ow_ext(OW_EXT_PIN);
+DallasTemperature ext_temp(&ow_ext);
+DeviceAddress ext_temp_addr;
 DHT dht(DHTPIN, DHTTYPE);
 
-char t_ext_str[6], t_int_str[6];
+//char t_ext_str[6], t_int_str[6];
+
 unsigned long lastTempRequest = 0;
 
 void init_thermo()
   {
-   int_temp.begin();
-   int_temp.getAddress(int_temp_addr, 0);
-   int_temp.setResolution(int_temp_addr, RESOLUTION);
-   int_temp.setWaitForConversion(false);
-   int_temp.requestTemperatures();
+   ext_temp.begin();
+   ext_temp.getAddress(ext_temp_addr, 0);
+   ext_temp.setResolution(ext_temp_addr, RESOLUTION);
+   ext_temp.setWaitForConversion(false);
+   ext_temp.requestTemperatures();
    lastTempRequest = millis(); 
   }
