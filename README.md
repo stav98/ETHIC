@@ -75,6 +75,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-//-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Δοκιμές του πρωτοκόλλου LoRa WAN Lite. <br>
 Σεπτέμβριος '21  : Συγγραφή τεκμηρίωσης - σύνδεση υποσυστημάτων - δοκιμές.<br>
 <br>
+Το έργο θα βελτιώνεται και αναβαθμίζεται συνεχώς από μαθητές επόμενων τάξεων. <b>Τελευταία ενημέρωση: Μαϊος 2022</b>
+<br>
 <table align="center">
  <tr>
   <td><img src="/resources/images/open2.jpg" width="500"></td>
